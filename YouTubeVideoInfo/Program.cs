@@ -118,7 +118,6 @@ namespace YouTubeVideoInfo
 
             string response = "";
             response = client.GetStringAsync(url).Result.ToString();
-            //Console.WriteLine(response);
             Root videoInfo = JsonSerializer.Deserialize<Root>(response);
             Item video = videoInfo.items[0];
             Console.WriteLine(video.id + " " + video.snippet.title + " " + video.snippet.publishedAt);
@@ -215,6 +214,7 @@ namespace YouTubeVideoInfo
                 }
             }
             connection.Close();
+            //comment
         }
     }
 }
